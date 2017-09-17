@@ -1,0 +1,12 @@
+
+<ol>
+  <% @creatures.each { |creature| %>
+  <li>
+    <p>Name: <%= creature.name %></p>
+
+    <p>Desc: <%= creature.description %></p>
+    <img src="<%= creature.link %>" alt="">
+    <p>Delete_flag: <%= creature.delete_flag %></p>
+  </li>
+  <% } %>
+</ol>
