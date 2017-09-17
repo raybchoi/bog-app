@@ -1,0 +1,22 @@
+
+<%= form_for @creature do |f| %>
+  <p>Name</p> <%= f.text_field :name %>
+  <p>Desc</p>
+  <%= f.text_area :description %>
+  <p>Link</p>
+  <%= f.text_field :link %>
+  <%= f.submit 'Save', class: 'btn' %>
+  <a href="/creatures" class="btn">Cancel</a>
+<% end %>
+
+
+<!-- PRE-Refactor
+<%= form_for :creature, url: "/creatures", method: "post" do |f| %>
+  <p>Name</p> <%= f.text_field :name %>
+  <p>Desc</p>
+  <%= f.text_area :description %>
+  <p>Link</p>
+  <%= f.text_field :link %>
+  <%= f.submit 'Save', class: 'btn' %>
+<% end %>
+-->
