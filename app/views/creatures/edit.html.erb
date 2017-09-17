@@ -1,11 +1,20 @@
 <!-- @creature is coming from the edit method and thats how it knows to fill it in -->
-<%= form_for @creature do |f| %>
-  <p>Name</p> <%= f.text_field :name %>
-  <p>Desc</p>
-  <%= f.text_area :description %>
-  <p>Link</p>
-  <%= f.text_field :link %>
-  <%= f.submit 'Save', class: 'btn' %>
-  <a href="/creatures" class="btn">Cancel</a>
-<% end %>
-<img src="<%=@creature.link %>" alt="">
+<div class="row">
+  <br>
+  <div class="row valign-wrapper">
+  <div class="col sm4 offset-s1">
+    <%= form_for @creature do |f| %>
+      <p class="info">Name</p> <%= f.text_field :name %>
+      <p class="info">Desc</p>
+      <%= f.text_area :description %>
+      <p class="info">Link</p>
+      <%= f.text_field :link %>
+      <%= f.submit 'Save', class:'btn', id:"save-edit"%>
+      <a href="/creatures" class="btn" id="back-button">Cancel</a>
+    <% end %>
+  </div>
+  <div class="col sm4">
+    <img src="<%=@creature.link %>" class="show-beast-img" alt="">
+  </div>
+</div>
+</div>

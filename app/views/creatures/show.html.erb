@@ -1,7 +1,21 @@
 
-<p>Name: <%= @creature.name%></p>
-<p>Desc: <%= @creature.description%></p>
-<img src="<%= @creature.link %>" alt="">
-<p>Delete_Flag: <%= @creature.delete_flag%></p>
-<%= button_to "Kill bog", @creature, method: :delete, class:"btn"%>
-<p><a href="/creatures" class='btn'>Back</a></p>
+
+<div class="row">
+  <br>
+  <div class="col sm10 offset-s2 pull-s1">
+    <p class="name-of-dragon">The <%= @creature.name%></p>
+    <p class="info"><%= @creature.description%></p>
+  </div>
+</div>
+<div class="row show-beast-div">
+  <div class="col sm12">
+    <img src="<%= @creature.link %>" class='show-beast-img'>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col sm12 offset-s2 pull-s1 show-beast-button">
+    <a href="/creatures" class='btn back-button' id="back-button"> Back</a>
+    <%= button_to "Delete Dragon", @creature, method: :delete, class:"btn delete-button", id:'delete-button'%>
+  </div>
+</div>

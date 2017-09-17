@@ -1,13 +1,21 @@
+<div class="row">
+  <img class='background-img' src="https://images.pottermore.com/bxd3o8b291gf/2I51xQSTcQae4k6sM8cs2u/7543dd599b68337c83a993ce886160ac/HarryPotter_PM_B4C20M1_HarryBattlingHungarianHorntailSecondTask_Moment.jpg?w=1100&q=85" alt="">
+</div>
+<div class="row">
+  <div class="col sm6 offset-s3 create-new-dragon">
+    <%= form_for @creature do |f| %>
+      <p>Name of Dragon</p>
+      <p><%= f.text_field :name, placeholder:'Name'%></p>
+      <p>Description of Dragon</p>
+      <%= f.text_area :description, placeholder:'Description of the dragon' %>
+      <p>Image Link</p>
+      <%= f.text_field :link, placeholder:'Add image link here'%>
+      <%= f.submit 'Create Dragon', class: 'btn', id:"save-edit"%>
+      <a href="/creatures" class="btn" id="back-button">Cancel</a>
+    <% end %>
+  </div>
+</div>
 
-<%= form_for @creature do |f| %>
-  <p>Name</p> <%= f.text_field :name %>
-  <p>Desc</p>
-  <%= f.text_area :description %>
-  <p>Link</p>
-  <%= f.text_field :link %>
-  <%= f.submit 'Save', class: 'btn' %>
-  <a href="/creatures" class="btn">Cancel</a>
-<% end %>
 
 
 <!-- PRE-Refactor

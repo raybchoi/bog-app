@@ -1,7 +1,17 @@
+<div class="row">
+  <img class='background-img' src="https://images.pottermore.com/bxd3o8b291gf/nOfM6zQzZucAasqAaUWgG/8e21d3e480e70b444a394fe21b49c543/RubeusHagrid_PM_BabyNorbertInHagridsHut_Moment.jpg?w=1100&q=85" alt="">
+</div>
 
-<p><a href="/creatures/new" class='btn'>Create new bog</a></p>
-<ol>
-  <% @creatures.each { |creature| %>
-    <%= render partial:'bog', object: creature %>
-  <% } %>
-</ol>
+<div class="row">
+  <div class="col s6 offset-s1">
+    <a href="/creatures/new" class='btn' id='new-dragon'>Add a dragon</a>
+  </div>
+  <!-- <div class="col s6">
+    <input type="text" name="" value="">
+  </div> -->
+</div>
+<div class="row">
+    <% @creatures.each { |creature| %>
+      <%= render partial:'bog', object: creature %>
+    <% } %>
+</div>
