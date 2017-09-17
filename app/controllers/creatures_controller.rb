@@ -31,7 +31,26 @@ class CreaturesController < ApplicationController
     end
   end
 
+  # able to find the bog to edit and show the form with the info
   def edit
+    @creature = Creature.find(params[:id])
+  end
+
+  # on submit ruby knows that edit is going to a patch route - the route tells which param to use as the ID. With that param it finds the creature. Once it finds the creature it can then update it and then save it.
+  def update
+    creature = Creature.find(params[:id])
+    creature.update_attributes(creature_params)
+    if creature.save
+      redirect_to creature_path(creature)
+    end
+  end
+
+  # be able to change the delete delete flag to true so you dont remove the customer data
+  def delete
+    creature = Creature.find(params[:id])
+    creature.update_attribute(:delete_flag, true)
+    # creature.destroy
+    redirect_to creatures_path
   end
 
   private

@@ -3,4 +3,5 @@
 <p>Desc: <%= @creature.description%></p>
 <img src="<%= @creature.link %>" alt="">
 <p>Delete_Flag: <%= @creature.delete_flag%></p>
+<%= button_to "Kill bog", @creature, method: :delete, class:"btn"%>
 <p><a href="/creatures" class='btn'>Back</a></p>

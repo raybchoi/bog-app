@@ -1,0 +1,11 @@
+<!-- @creature is coming from the edit method and thats how it knows to fill it in -->
+<%= form_for @creature do |f| %>
+  <p>Name</p> <%= f.text_field :name %>
+  <p>Desc</p>
+  <%= f.text_area :description %>
+  <p>Link</p>
+  <%= f.text_field :link %>
+  <%= f.submit 'Save', class: 'btn' %>
+  <a href="/creatures" class="btn">Cancel</a>
+<% end %>
+<img src="<%=@creature.link %>" alt="">

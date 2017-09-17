@@ -1,0 +1,8 @@
+<li>
+  <p>Name: <%= bog.name %></p>
+  <p>Desc: <%= bog.description %></p>
+  <img src="<%= bog.link %>" alt="">
+  <p>Delete_flag: <%= bog.delete_flag %></p>
+  <a href="/creatures/<%=bog.id%>/" class='btn'>About <%= bog.name %></a>
+  <a href="/creatures/<%=bog.id%>/edit" class='btn'>Edit <%= bog.name %></a>
+</li>

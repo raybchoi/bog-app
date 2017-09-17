@@ -2,13 +2,6 @@
 <p><a href="/creatures/new" class='btn'>Create new bog</a></p>
 <ol>
   <% @creatures.each { |creature| %>
-  <li>
-    <p>Name: <%= creature.name %></p>
-
-    <p>Desc: <%= creature.description %></p>
-    <img src="<%= creature.link %>" alt="">
-    <p>Delete_flag: <%= creature.delete_flag %></p>
-    <a href="/creatures/<%=creature.id%>/" class='btn'>About <%= creature.name %></a>
-  </li>
+    <%= render partial:'bog', object: creature %>
   <% } %>
 </ol>
