@@ -8,6 +8,7 @@
     <p>Desc: <%= creature.description %></p>
     <img src="<%= creature.link %>" alt="">
     <p>Delete_flag: <%= creature.delete_flag %></p>
+    <a href="/creatures/<%=creature.id%>/" class='btn'>About <%= creature.name %></a>
   </li>
   <% } %>
 </ol>

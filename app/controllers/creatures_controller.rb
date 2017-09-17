@@ -16,13 +16,22 @@ class CreaturesController < ApplicationController
   def create
     creature = Creature.create(creature_params)
     if creature.save
-      redirect_to creatures_path
+      redirect_to creature_path(creature)
     end
   end
 
     # show one bog at a time
   def show
-    @creature = Creature.find(params[:id])
+    # first find the creature - if the creature delete_flage == true then creature comes back as nil and then redirect to home main paige else show the single creature page
+    creature = Creature.find_by(id: params[:id], delete_flag:false)
+    if creature.nil?
+      redirect_to creatures_path
+    else
+      @creature = creature
+    end
+  end
+
+  def edit
   end
 
   private
